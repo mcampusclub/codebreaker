@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a16"><meta name="description" content="Codebreaker — the daily numeric mastermind challenge from Microsoft Campus Club.">
+  <title>Codebreaker — Microsoft Campus Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="space-bg" aria-hidden="true"><div class="nebula blue"></div><div class="nebula pink"></div><div class="grid-overlay"></div><canvas id="networkCanvas"></canvas></div>
+  <div class="page">
+    <header class="site-header"><a class="brand" href="https://technical-game-homepage.vercel.app/" aria-label="Back to Technical Game Hub"><img src="assets/mcc-logo.jpg" alt="Microsoft Campus Club logo"><span><b>MICROSOFT CAMPUS CLUB</b><small>TECHNICAL GAME HUB</small></span></a><a class="back-link" href="https://technical-game-homepage.vercel.app/">← GAME HUB</a></header>
+    <main>
+      <section class="hero"><p class="eyebrow"><i></i> DAILY CHALLENGE / 02</p><h1>CODE<span>BREAKER</span></h1><p class="subtitle">THE NUMERIC MASTERMIND</p><p class="intro">A sequence is hidden. Every guess reveals a little more. Use logic, not luck, to crack today's code.</p></section>
+      <section class="game-layout" aria-label="Codebreaker game">
+        <div class="game-panel">
+          <div class="panel-head"><div><span class="eyebrow-mini">TODAY'S OPERATION</span><h2>Decrypt the sequence</h2></div><div class="live"><i></i> SYSTEM ONLINE</div></div>
+          <div class="stats"><div><span>CODE LENGTH</span><strong id="codeLength">—</strong></div><div><span>ATTEMPTS LEFT</span><strong id="attemptsLeft">—</strong></div><div><span>DAILY RESET</span><strong>12:00 PM IST</strong></div></div>
+          <div class="slots-wrap"><div class="section-caption">ENTER YOUR GUESS <span id="inputHint">UNIQUE DIGITS · 0–9</span></div><div id="guessSlots" class="guess-slots" aria-label="Your guess"></div><div id="keypad" class="keypad" aria-label="Numeric keypad"></div><div class="input-actions"><button id="clearBtn" class="btn btn-ghost" type="button">CLEAR</button><button id="submitBtn" class="btn btn-primary" type="button">SUBMIT GUESS <span>→</span></button></div><p id="message" class="message" role="status" aria-live="polite">Enter a unique-digit sequence to begin.</p></div>
+          <div class="history-head"><h3>DECRYPTION LOG</h3><span id="historyCount">0 GUESSES</span></div>
+          <div id="history" class="history"><div class="empty-log">Your attempts will appear here.<br><span>Awaiting first input…</span></div></div>
+        </div>
+        <aside class="side-panel">
+          <div class="side-card"><span class="eyebrow-mini">HOW TO PLAY</span><h3>Read the signals.</h3><div class="rule"><span class="signal green"></span><p><b>GREEN</b><small>Correct digit in the correct position.</small></p></div><div class="rule"><span class="signal yellow"></span><p><b>YELLOW</b><small>Correct digit, but in the wrong position.</small></p></div><div class="rule"><span class="signal grey"></span><p><b>GREY</b><small>That digit isn't in the secret code.</small></p></div><div class="rule-note">Digits never repeat. The code can begin with zero.</div></div>
+          <div class="side-card challenge-card"><span class="eyebrow-mini">DAILY CHALLENGE</span><div class="challenge-date" id="challengeDate">—</div><p>One shared code for every player, refreshed daily at noon Indian Standard Time.</p><div class="seed-line"><span>CHALLENGE ID</span><code id="challengeId">—</code></div></div>
+          <div class="side-card"><span class="eyebrow-mini">MISSION STATUS</span><div class="status-line"><span>DIFFICULTY</span><b id="difficulty">—</b></div><div class="status-line"><span>MAX ATTEMPTS</span><b id="maxAttempts">—</b></div><div class="status-line"><span>DIGIT POOL</span><b>0 — 9</b></div></div>
+        </aside>
+      </section>
+      <footer class="footer"><span>〈/〉 BUILT BY CREATORS. FOR INNOVATORS.</span><span>MICROSOFT CAMPUS CLUB</span></footer>
+    </main>
+  </div>
+  <div id="resultModal" class="modal" hidden><div class="modal-card"><div class="result-icon" id="resultIcon">✓</div><p class="eyebrow-mini" id="resultEyebrow">CODE DECRYPTED</p><h2 id="resultTitle">Excellent work.</h2><p id="resultText"></p><div class="revealed-code" id="revealedCode"></div><button id="closeModal" class="btn btn-primary" type="button">BACK TO GAME</button></div></div>
+  <script src="script.js"></script>
+</body></html>
